@@ -20,5 +20,8 @@ def test_should_see_button_add(browser):
         # Поиск кнопки
         browser.find_element(By.XPATH, '//button[@class="btn btn-lg btn-primary btn-add-to-basket"]')
         print('Button - ok!')
+        result = True
     except NoSuchElementException:
         print('No button!')
+        result = False
+    assert result, "No button!"
